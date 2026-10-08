@@ -1,0 +1,8 @@
+### Podobieństwa między RefCell&lt;T>/Rc&lt;T> a Mutex&lt;T>/Arc&lt;T>
+
+Możesz zauważyć, że `counter` jest niemutowalny, ale możemy uzyskać mutowalny wskaźnik do wartości, która znajduje się wewnątrz niego; oznacza to, że `Mutex<T>` zapewnia wewnętrzną mutowalność, podobnie jak rodzina `Cell`. W ten sam sposób, w jaki używaliśmy `RefCell<T>` w Rozdziale 15, aby umożliwić modyfikowanie zawartości wewnątrz `Rc<T>`, używamy `Mutex<T>` do modyfikowania zawartości wewnątrz `Arc<T>`.
+
+Inny szczegół, na który warto zwrócić uwagę, to fakt, że Rust nie może uchronić cię przed wszystkimi rodzajami błędów logicznych podczas korzystania z `Mutex<T>`. Przypomnij sobie z Rozdziału 15, że używanie `Rc<T>` wiązało się z ryzykiem tworzenia cykli referencji, w których dwie wartości `Rc<T>` odwołują się nawzajem, co prowadzi do wycieków pamięci. Podobnie, `Mutex<T>` wiąże się z ryzykiem tworzenia _deadlocków_. Deadlocki występują, gdy operacja wymaga zablokowania dwóch zasobów, a dwa wątki uzyskały dostęp każdy do jednego z blokad, przez co bez końca czekają na siebie nawzajem. Jeśli interesują cię deadlocki, spróbuj stworzyć program w Ruście, który powoduje deadlock; następnie zbadaj strategie ich unikania dla mutexów w dowolnym języku i spróbuj zaimplementować je w Ruście. Dokumentacja API standardowej biblioteki dla `Mutex<T>` i `MutexGuard` zawiera przydatne informacje.
+
+Możesz również przeczytać [sekcję książki o cechach `Send` i `Sync`](https://doc.rust-lang.org/stable/book/ch16-04-extensible-concurrency-sync-and-send.html)
+i zobaczyć, jak możemy ich używać z typami niestandardowymi.

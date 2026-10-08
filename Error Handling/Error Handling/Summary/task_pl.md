@@ -1,0 +1,5 @@
+## Podsumowanie
+
+Funkcje obsługi błędów w Rust zostały zaprojektowane w celu umożliwienia pisania bardziej solidnego kodu. Makro `panic!` sygnalizuje, że program znalazł się w stanie, którego nie jest w stanie obsłużyć, i pozwala zakończyć proces zamiast kontynuować z nieprawidłowymi lub błędnymi wartościami. Enum `Result` wykorzystuje system typów Rust, aby wskazać, że operacje mogą zakończyć się niepowodzeniem w sposób, z którego Twój kod może się wycofać. Możesz użyć `Result` do informowania kodu, który wywołuje Twój kod, że musi obsłużyć zarówno potencjalny sukces, jak i niepowodzenie. Używanie `panic!` oraz `Result` w odpowiednich sytuacjach sprawi, że Twój kod będzie bardziej niezawodny w obliczu nieuniknionych problemów.
+
+Zajrzyj do sekcji z pomysłami i wytycznymi dotyczącymi zasad stosowania `panic` lub `Result` w Twoim własnym kodzie w [Książce](https://doc.rust-lang.org/stable/book/ch09-03-to-panic-or-not-to-panic.html).

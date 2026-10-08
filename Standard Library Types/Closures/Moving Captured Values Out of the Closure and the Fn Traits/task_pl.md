@@ -1,0 +1,9 @@
+### Przenoszenie przechwyconych wartości poza zakres zamknięcia i cechy `Fn`
+
+Gdy zamknięcie przejmie referencję lub przeniesie wartość do swojego zakresu, kod w ciele funkcji wpływa na to, co stanie się z referencjami lub wartościami w wyniku wywołania funkcji. Ciało zamknięcia może przenieść przechwyconą wartość poza jego zakres, może zmodyfikować przechwyconą wartość, może ani nie przenosić, ani nie modyfikować wartości, lub może nie przechwytywać niczego ze swojego środowiska. Sposób, w jaki zamknięcie przechwytuje i obsługuje wartości ze środowiska, wpływa na to, które cechy (`traits`) są przez nie implementowane. Cechy te pozwalają funkcjom i strukturom określić, jakie rodzaje zamknięć mogą być używane.
+
+Zamknięcia automatycznie implementują jedną, dwie lub wszystkie trzy cechy `Fn` w sposób addytywny:
+
+1.  `FnOnce` odnosi się do zamknięć, które można wywołać co najmniej jeden raz. Wszystkie zamknięcia implementują tę cechę, ponieważ wszystkie zamknięcia można wywołać. Jeśli zamknięcie przenosi przechwycone wartości poza swoje ciało, wówczas implementuje tylko `FnOnce`, ale nie implementuje pozostałych cech `Fn`, ponieważ może być wywołane tylko raz.
+2.  `FnMut` odnosi się do zamknięć, które nie przenoszą przechwyconych wartości poza swoje ciało, ale mogą modyfikować przechwycone wartości. Te zamknięcia mogą być wywoływane więcej niż raz.
+3.  `Fn` odnosi się do zamknięć, które nie przenoszą przechwyconych wartości poza swoje ciało i nie modyfikują przechwyconych wartości. Te zamknięcia mogą być wywoływane wielokrotnie bez modyfikowania ich środowiska, co jest istotne w przypadkach takich jak wielokrotne, równoczesne wywoływanie zamknięcia. Zamknięcia, które nie przechwytują niczego ze swojego środowiska, implementują cechę `Fn`.

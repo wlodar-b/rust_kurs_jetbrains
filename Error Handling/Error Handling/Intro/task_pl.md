@@ -1,0 +1,7 @@
+## Obsługa błędów
+
+Zaangażowanie Rust w niezawodność obejmuje także obsługę błędów. Błędy są nieodłącznym elementem w programowaniu, dlatego Rust oferuje wiele funkcji umożliwiających obsługę sytuacji, w których coś poszło nie tak. W wielu przypadkach Rust wymaga od Ciebie uznania możliwości wystąpienia błędu i podjęcia odpowiednich działań, zanim Twój kod zostanie skompilowany. Ten wymóg sprawia, że Twój program jest bardziej odporny, zapewniając wykrywanie i odpowiednią obsługę błędów, zanim kod zostanie wdrożony do środowiska produkcyjnego!
+
+Rust dzieli błędy na dwie główne kategorie: błędy _odwracalne_ i błędy _nieodwracalne_. W przypadku błędu odwracalnego, takiego jak błąd „plik nie został znaleziony”, rozsądne jest poinformowanie użytkownika o problemie i ponowienie operacji. Nieodwracalne błędy to zawsze objawy błędów w kodzie, jak np. próba dostępu do miejsca poza końcem tablicy.
+
+Większość języków programowania nie rozróżnia tych dwóch rodzajów błędów i obsługuje oba w ten sam sposób, korzystając na przykład z mechanizmów wyjątków. Rust nie ma wyjątków. Zamiast tego posiada typ `Result<T, E>` do obsługi błędów odwracalnych oraz makro `panic!`, które zatrzymuje wykonywanie programu w momencie napotkania błędu nieodwracalnego. W tym rozdziale najpierw omówimy wywołanie `panic!`, a następnie zajmiemy się zwracaniem wartości typu `Result<T, E>`. Dodatkowo zbadamy kwestie związane z wyborem, czy próbować odzyskać kontrolę po wystąpieniu błędu, czy też zakończyć działanie programu.

@@ -1,0 +1,5 @@
+## Organizacja testów
+
+Jak wspomniano na początku rozdziału, testowanie to skomplikowana dziedzina, a różni ludzie używają różnych terminologii i sposobów organizacji. Społeczność języka Rust postrzega testy w kontekście dwóch głównych kategorii: *testów jednostkowych* oraz *testów integracyjnych*. Testy jednostkowe są małe i bardziej skoncentrowane, testując jeden moduł w izolacji naraz, i mogą testować prywatne interfejsy. Testy integracyjne są całkowicie zewnętrzne wobec twojej biblioteki i używają twojego kodu w taki sam sposób, jak zrobiłby to każdy inny zewnętrzny kod, korzystając wyłącznie z interfejsu publicznego i potencjalnie testując wiele modułów w ramach jednego testu.
+
+Pisanie obu rodzajów testów jest ważne, aby upewnić się, że elementy twojej biblioteki działają zgodnie z oczekiwaniami, zarówno oddzielnie, jak i razem.

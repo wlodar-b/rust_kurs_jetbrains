@@ -1,0 +1,5 @@
+### Łańcuchy znaków nie są takie proste
+
+Podsumowując, łańcuchy znaków są skomplikowane. Różne języki programowania podejmują różne decyzje dotyczące sposobu prezentacji tej złożoności programiście. Rust zdecydował, że poprawne zarządzanie danymi typu `String` będzie domyślnym zachowaniem dla wszystkich programów napisanych w Rust, co oznacza, że programiści muszą od samego początku poświęcić więcej uwagi obsłudze danych w formacie UTF-8. Taki kompromis ujawnia większą złożoność łańcuchów znaków niż jest to widoczne w innych językach programowania, ale pozwala uniknąć problemów związanych z obsługą nie-ASCII znaków na późniejszych etapach cyklu życia aplikacji.
+
+_Możesz zapoznać się z następnym rozdziałem w książce o języku Rust: [Strings](https://doc.rust-lang.org/stable/book/ch08-02-strings.html)_

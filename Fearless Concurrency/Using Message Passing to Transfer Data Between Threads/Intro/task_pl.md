@@ -1,0 +1,9 @@
+## Używanie przekazywania wiadomości do przesyłania danych między wątkami
+
+Coraz bardziej popularnym podejściem do zapewnienia bezpiecznej współbieżności jest _przekazywanie wiadomości_ (ang. _message passing_), w którym wątki lub aktorzy komunikują się poprzez wysyłanie sobie nawzajem wiadomości zawierających dane. Oto idea opisana za pomocą sloganu z [dokumentacji języka Go](http://golang.org/doc/effective_go.html): „Nie komunikuj się poprzez współdzielenie pamięci; zamiast tego współdziel pamięć poprzez komunikację”.
+
+Jednym z głównych narzędzi, jakie Rust oferuje do realizacji współbieżności opartej na przesyłaniu wiadomości, jest _kanał_ (ang. _channel_) – koncepcja programistyczna, której implementację zapewnia standardowa biblioteka Rusta. Możesz wyobrazić sobie kanał w programowaniu jako strumień wody, na przykład rzekę. Jeśli wrzucisz coś, jak gumową kaczkę lub łódkę, do strumienia, popłynie ona w dół rzeki do jej końca.
+
+Kanał w programowaniu składa się z dwóch części: nadawcy i odbiorcy. Nadawca to miejsce w górnym biegu rzeki, gdzie wkładasz gumowe kaczki, a odbiorca to miejsce w dolnym biegu, gdzie kaczek dociera. Jedna część twojego kodu wywołuje metody na nadawcy, przekazując dane, które chcesz przesłać, a inna część sprawdza odbiornik pod kątem przychodzących wiadomości. Kanał uznawany jest za _zamknięty_, jeśli jedna z części – nadawca lub odbiorca – zostanie zwolniona (ang. _dropped_).
+
+Tutaj stworzymy program, który będzie mieć jeden wątek generujący wartości i wysyłający je przez kanał oraz drugi wątek, który odbierze te wartości i je wydrukuje. Będziemy przesyłać proste wartości między wątkami za pomocą kanału, aby zilustrować tę funkcję. Gdy zapoznasz się z tą techniką, będziesz mógł wykorzystać kanały do implementacji systemu czatu lub systemu, w którym wiele wątków wykonuje części obliczeń i przesyła wyniki do jednego wątku, który agreguje rezultaty.

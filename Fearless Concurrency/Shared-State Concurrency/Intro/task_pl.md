@@ -1,0 +1,7 @@
+## Współbieżność przy współdzielonym stanie
+
+Przesyłanie wiadomości to dobre podejście do obsługi współbieżności, ale nie jest to jedyne rozwiązanie. Rozważmy ponownie fragment sloganu z dokumentacji języka Go: „nie komunikuj się przez współdzielenie pamięci”.
+
+Jak mogłaby wyglądać komunikacja przez współdzielenie pamięci? Ponadto, dlaczego entuzjaści przesyłania wiadomości unikają tego podejścia i stosują odwrotne?
+
+W pewnym sensie kanały w dowolnym języku programowania są podobne do pojedynczej własności, ponieważ po przesłaniu wartości przez kanał nie powinno się jej już więcej używać. Współbieżność przy współdzielonej pamięci jest jak wielokrotna własność: wiele wątków może jednocześnie uzyskiwać dostęp do tej samej lokalizacji pamięci. Jak można zobaczyć w [Rozdziale 15](https://doc.rust-lang.org/book/ch15-00-smart-pointers.html) książki o Rust, gdzie inteligentne wskaźniki umożliwiły wielokrotną własność, taka wielokrotna własność może skomplikować sprawę, ponieważ różni właściciele wymagają odpowiedniego zarządzania. System typów i reguły własności w Rust w dużym stopniu pomagają w poprawnym zarządzaniu tym procesem. Aby zobaczyć przykład, przyjrzyjmy się mutexom, jednemu z bardziej powszechnych prymitywów współbieżności dla współdzielonej pamięci.

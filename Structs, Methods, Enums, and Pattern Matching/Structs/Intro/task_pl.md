@@ -1,0 +1,3 @@
+## Używanie struktur do organizowania powiązanych danych
+
+*Struct*, czyli *struktura*, to niestandardowy typ danych, który pozwala nazwać i połączyć ze sobą wiele powiązanych wartości, tworząc znaczącą grupę. Jeśli znasz języki zorientowane obiektowo, *struct* jest podobny do atrybutów danych obiektu. W tym rozdziale porównamy i zestawimy krotki ze strukturami, pokażemy, jak korzystać ze struktur, oraz omówimy, jak definiować metody i funkcje powiązane w celu określenia zachowania związanego z danymi struktury. Struktury i wyliczenia (omówione w rozdziale "Wyliczenia") są podstawowymi elementami umożliwiającymi tworzenie nowych typów w domenie twojego programu, aby w pełni wykorzystać walidację typów w czasie kompilacji w języku Rust.

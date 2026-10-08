@@ -1,0 +1,5 @@
+## Podsumowanie
+
+Funkcje testowe w Rust umożliwiają określenie, w jaki sposób kod powinien działać, aby upewnić się, że będzie funkcjonował zgodnie z oczekiwaniami, nawet wraz z wprowadzaniem zmian. Testy jednostkowe sprawdzają różne części biblioteki oddzielnie i mogą testować szczegóły jej wewnętrznej implementacji. Testy integracyjne weryfikują, czy różne części biblioteki współdziałają poprawnie, korzystając z publicznego API biblioteki, aby przetestować kod w taki sam sposób, w jaki będzie używany przez kod zewnętrzny. Chociaż system typów i reguły własności w Rust pomagają zapobiegać pewnym rodzajom błędów, testy nadal są istotne, aby ograniczyć błędy logiki związane z oczekiwaną funkcjonalnością Twojego kodu.
+
+_Możesz odnieść się do poniższego rozdziału w książce "The Rust Programming Language": [Podmoduły w testach integracyjnych](https://doc.rust-lang.org/stable/book/ch11-03-test-organization.html#submodules-in-integration-tests)_

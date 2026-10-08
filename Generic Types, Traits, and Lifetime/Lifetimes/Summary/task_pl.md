@@ -1,0 +1,7 @@
+## Podsumowanie
+
+Omówiliśmy wiele w tym rozdziale! Teraz, gdy znasz już parametry typów generycznych, cechy (traits) i ograniczenia cech (trait bounds), a także generyczne parametry żywotności (lifetime parameters), jesteś gotowy do pisania kodu bez powtórzeń, który działa w różnych sytuacjach. Generyczne parametry typów pozwalają zastosować kod do różnych typów. Cechy i ich ograniczenia zapewniają, że mimo iż typy są generyczne, będą miały zachowanie wymagane przez kod. Nauczyłeś się używać adnotacji żywotności, aby zapewnić, że ten elastyczny kod nie będzie miał żadnych wiszących odniesień (dangling references). A cała ta analiza odbywa się w czasie kompilacji, co nie wpływa na wydajność w czasie działania programu!
+
+Wierz lub nie, ale jest jeszcze więcej do nauczenia się na temat zagadnień omówionych w tym rozdziale: Rozdział 17 omawia obiekty cech (trait objects), które są innym sposobem korzystania z cech. Istnieją także bardziej złożone scenariusze związane z adnotacjami żywotności, które będą potrzebne jedynie w bardzo zaawansowanych przypadkach; w takich sytuacjach warto zapoznać się z [Rust Reference][reference]. Ale najpierw nauczysz się pisać testy w Rust, aby upewnić się, że Twój kod działa tak, jak powinien.
+
+[reference]: https://doc.rust-lang.org/reference/index.html

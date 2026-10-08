@@ -1,0 +1,3 @@
+## Klauzury: anonimowe funkcje, które mogą przechwytywać swoje otoczenie
+
+Klauzury w Rust to anonimowe funkcje, które można zapisać w zmiennej lub przekazać jako argumenty do innych funkcji. Możesz utworzyć klauzurę w jednym miejscu, a następnie wywołać ją w innym kontekście. W odróżnieniu od funkcji, klauzury mogą przechwytywać wartości z zakresu, w którym zostały zdefiniowane. Pokażemy, jak te cechy klauzur umożliwiają ponowne użycie kodu i dostosowanie jego zachowania.
