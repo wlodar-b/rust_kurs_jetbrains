@@ -11,15 +11,19 @@ impl Package {
             // This shouldn't happen so we panic 
             panic!();
         } 
-        /* Instantiate the package here */
+        Package {
+            sender_country,
+            recipient_country,
+            weight_in_grams}
     }
 
-    fn is_international(&self) -> /* Add return type */ {
-        /* Something goes here */
+    fn is_international(&self) -> bool {
+        self.recipient_country != self.sender_country
     }
 
-    fn get_fees(&self, cents_per_gram: i32) -> /* Add return type */ {
-        /* Something goes here */
+    fn get_fees(&self, cents_per_gram: i32) -> i32 {
+        let money = self.weight_in_grams * cents_per_gram;
+        money
     }
 }
 
