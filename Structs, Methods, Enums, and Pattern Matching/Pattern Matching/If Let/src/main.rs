@@ -13,13 +13,13 @@ enum Coin {
 }
 
 fn main() {
-    let some_u8_value = Some(0u8);
+    let some_u8_value = Some(3);
     if let Some(3) = some_u8_value {
         println!("three");
     }
 
     let mut count = 0;
-    let coin = Coin::Dime;
+    let coin = Coin::Quarter(UsState::Alabama);
     if let Coin::Quarter(state) = coin {
         println!("State quarter from {:?}!", state);
     } else {
