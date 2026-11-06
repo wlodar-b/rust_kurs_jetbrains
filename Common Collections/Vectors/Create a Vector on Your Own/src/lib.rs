@@ -3,8 +3,12 @@ pub fn create_array() -> [i32; 4] {
     a
 }
 
-pub fn create_vector() -> /* TODO */ {
-    let v = /* TODO */;
+pub fn create_vector() -> Vec<i32> {
+    let mut v = Vec::new();
+    v.push(10);
+    v.push(20);
+    v.push(30);
+    v.push(40);
     v
 }
 

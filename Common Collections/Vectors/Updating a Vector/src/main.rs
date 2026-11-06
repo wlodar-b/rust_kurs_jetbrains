@@ -5,4 +5,6 @@ fn main() {
     v.push(6);
     v.push(7);
     v.push(8);
+
+    println!("Vector is: {:?}", v);
 }
